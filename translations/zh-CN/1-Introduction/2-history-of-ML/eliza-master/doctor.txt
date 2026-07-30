@@ -1,0 +1,367 @@
+initial: 你好， 请 告诉 我 你 的 问题。
+final: 再见。 谢谢 你 和 我 聊天。
+quit: 再见
+quit: 拜拜
+quit: 退出
+quit: bye
+quit: goodbye
+quit: quit
+
+pre: 俺 我
+pre: 咱 我
+pre: 计算机 电脑
+pre: 笔记本 电脑
+pre: 笔记本电脑 电脑
+pre: 笔电 电脑
+
+post: 我 你
+post: 你 我
+post: 我的 你的
+post: 你的 我的
+post: 我自己 你自己
+post: 你自己 我自己
+
+synon: belief 感觉 觉得 想 认为 相信 希望
+synon: family 妈妈 父亲 爸爸 姐姐 哥哥 弟弟 妹妹 妻子 丈夫 孩子 儿子 女儿
+synon: desire 想要 需要
+synon: sad 难过 不开心 沮丧 伤心 抑郁 生病
+synon: happy 开心 高兴 快乐 满足 愉悦
+synon: cannot 不能 无法
+synon: everyone 所有人 大家 每个人 没人 没有人
+synon: be 是 在 有
+
+key: xnone
+  decomp: *
+    reasmb: 我 不太 确定 我 完全 理解 你 的 意思 。
+    reasmb: 请 继续 说 。
+    reasmb: 这 让 你 想到 什么 ？
+    reasmb: 你 对 讨论 这些 事情 有 强烈 的 感受 吗 ？
+
+key: 抱歉
+  decomp: *
+    reasmb: 请 不要 道歉 。
+    reasmb: 不需要 道歉 。
+    reasmb: 我 已经 告诉 过 你 ， 不需要 道歉 。
+
+key: 道歉
+  decomp: *
+    reasmb: goto 抱歉
+
+key: 记得 5
+  decomp: * 我 记得 *
+    reasmb: 你 经常 想起 (2) 吗 ？
+    reasmb: 想起 (2) 会 让 你 想到 别的 什么 吗 ？
+    reasmb: 你 还 记得 什么 ？
+    reasmb: 为什么 你 现在 想起 (2) ？
+    reasmb: 现在 的 情况 中 什么 让 你 想起 (2) ？
+    reasmb: 我 和 (2) 之间 有 什么 联系 ？
+  decomp: * 你 记得 *
+    reasmb: 你 以为 我 会 忘记 (2) 吗 ？
+    reasmb: 为什么 你 觉得 我 现在 应该 想起 (2) ？
+    reasmb: (2) 怎么 了 ？
+    reasmb: goto 什么
+    reasmb: 你 提到 (2) ？
+
+key: 如果 3
+  decomp: * 如果 *
+    reasmb: 你 觉得 (2) 有 可能 吗 ？
+    reasmb: 你 希望 (2) 吗 ？
+    reasmb: 关于 (2) 你 知道 什么 ？
+    reasmb: 真的 吗 ， 如果 (2) ？
+
+key: 梦 4
+  decomp: * 我 梦到 *
+    reasmb: 真的 吗 ， (2) ？
+    reasmb: 你 醒着 的 时候 有 幻想 过 (2) 吗 ？
+    reasmb: 你 以前 梦到过 (2) 吗 ？
+    reasmb: goto 做梦
+key: 做梦 3
+  decomp: *
+    reasmb: 那个 梦 让 你 想到 什么 ？
+    reasmb: 你 经常 做梦 吗 ？
+    reasmb: 你 的 梦里 出现 什么 人 ？
+    reasmb: 你 认为 梦 和 你 的 问题 有关 吗 ？
+
+key: 也许
+  decomp: *
+    reasmb: 你 看起来 不 太 确定 。
+    reasmb: 为什么 语气 不 确定 ？
+    reasmb: 你 不能 更 肯定 一点 吗 ？
+    reasmb: 你 不 确定 吗 ？
+    reasmb: 你 不知道 吗 ？
+
+key: 名字 15
+  decomp: *
+    reasmb: 我 对 名字 不 感兴趣 。
+    reasmb: 我 之前 说过 ， 我 不 在乎 名字 —— 请 继续 。
+
+key: 英文
+  decomp: *
+    reasmb: goto 外语
+    reasmb: 我 之前 说过 ， 我 不 懂 英文 。
+key: 日语
+  decomp: *
+    reasmb: goto 外语
+    reasmb: 我 之前 说过 ， 我 不 懂 日语 。
+key: 韩语
+  decomp: *
+    reasmb: goto 外语
+    reasmb: 我 之前 说过 ， 我 不 懂 韩语 。
+key: 法语
+  decomp: *
+    reasmb: goto 外语
+    reasmb: 我 之前 说过 ， 我 不 懂 法语 。
+key: 外语
+  decomp: *
+    reasmb: 我 只 会说 中文 。
+
+key: 你好
+  decomp: *
+    reasmb: 你好 。 请 说 出 你 的 问题 。
+    reasmb: 嗨 ， 你 遇到 什么 问题 ？
+
+key: 电脑 50
+  decomp: *
+    reasmb: 电脑 让 你 担心 吗 ？
+    reasmb: 为什么 你 提到 电脑 ？
+    reasmb: 你 认为 机器 和 你 的 问题 有 什么 关系 ？
+    reasmb: 你 不 觉得 电脑 能 帮助 人 吗 ？
+    reasmb: 机器 的 什么 让 你 担心 ？
+    reasmb: 你 怎么 看待 机器 ？
+
+key: 是
+  decomp: * 我 是 *
+    reasmb: 你 相信 你 是 (2) 吗 ？
+    reasmb: 你 想 成为 (2) 吗 ？
+    reasmb: 你 希望 我 告诉 你 你 是 (2) 吗 ？
+    reasmb: 如果 你 是 (2) ， 那 意味着 什么 ？
+    reasmb: goto 什么
+  decomp: * 你 是 *
+    reasmb: 为什么 你 对 我 是否 是 (2) 感兴趣 ？
+    reasmb: 如果 我 不 是 (2) ， 你 会 更 喜欢 吗 ？
+    reasmb: 也许 在 你 的 幻想 中 我 是 (2) 。
+    reasmb: 你 有时 会 觉得 我 是 (2) 吗 ？
+    reasmb: goto 什么
+  decomp: * 是 *
+    reasmb: 你 认为 他们 可能 不 是 (2) 吗 ？
+    reasmb: 如果 他们 不 是 (2) ， 你 会 喜欢 吗 ？
+    reasmb: 如果 他们 不 是 (2) 会 怎样 ？
+    reasmb: 也许 他们 是 (2) 。
+
+key: 你
+  decomp: * 你 让 我 想起 *
+    reasmb: goto 像
+  decomp: * 你 是 *
+    reasmb: 为什么 你 认为 我 是 (2) ？
+    reasmb: 相信 我 是 (2) 让 你 高兴 吗 ？
+    reasmb: 你 有时 希望 你 是 (2) 吗 ？
+    reasmb: 也许 你 想 成为 (2) 。
+  decomp: * 你 * 我 *
+    reasmb: 为什么 你 认为 我 (2) 你 ？
+    reasmb: 你 喜欢 认为 我 (2) 你 —— 不是 吗 ？
+    reasmb: 什么 让 你 认为 我 (2) 你 ？
+    reasmb: 真的 吗 ， 我 (2) 你 ？
+    reasmb: 你 希望 相信 我 (2) 你 吗 ？
+    reasmb: 假设 我 确实 (2) 你 —— 那 意味着 什么 ？
+    reasmb: 有 别人 相信 我 (2) 你 吗 ？
+  decomp: * 你 *
+    reasmb: 我们 在 讨论 你 —— 不是 我 。
+    reasmb: 哦 ， 我 (2) ？
+    reasmb: 你 其实 不 是 在 说 我 —— 对 吗 ？
+    reasmb: 你 现在 有 什么 感受 ？
+
+key: 我
+  decomp: * 我 @desire *
+    reasmb: 如果 你 得到 (3) ， 对 你 意味着 什么 ？
+    reasmb: 为什么 你 想要 (3) ？
+    reasmb: 假设 你 很快 就 得到 (3) ？
+    reasmb: 如果 你 永远 得 不到 (3) 会 怎样 ？
+    reasmb: 得到 (3) 对 你 意味着 什么 ？
+    reasmb: 想要 (3) 和 这次 谈话 有 什么 关系 ？
+  decomp: * 我 @sad *
+    reasmb: 听到 你 (2) 我 感到 遗憾 。
+    reasmb: 你 觉得 来 这里 会 帮助 你 不 再 (2) 吗 ？
+    reasmb: 我 肯定 (2) 不 好受 。
+    reasmb: 你 能 解释 什么 让 你 (2) 吗 ？
+  decomp: * 我 @happy *
+    reasmb: 我 是 怎么 帮助 你 变得 (2) 的 ？
+    reasmb: 是 治疗 让 你 (2) 的 吗 ？
+    reasmb: 什么 让 你 现在 (2) ？
+    reasmb: 你 能 解释 为什么 你 突然 (2) 吗 ？
+  decomp: * 我 曾经 *
+    reasmb: goto 曾经
+  decomp: * 我 @belief * 我 *
+    reasmb: 你 真的 这么 认为 吗 ？
+    reasmb: 但 你 不 确定 你 (3) 。
+    reasmb: 你 真的 怀疑 你 (3) 吗 ？
+  decomp: * 我 * @belief * 你 *
+    reasmb: goto 你
+  decomp: * 我 是 *
+    reasmb: 是因为 你 是 (2) 才 来 找 我 的 吗 ？
+    reasmb: 你 这样 有 多 久 了 ？
+    reasmb: 你 相信 这 正常 吗 ？
+    reasmb: 你 喜欢 是 (2) 吗 ？
+  decomp: * 我 @cannot *
+    reasmb: 你 怎么 认为 你 不能 (3) ？
+    reasmb: 你 尝试 过 吗 ？
+    reasmb: 也许 你 现在 可以 (3) 。
+    reasmb: 你 真的 想 能够 (3) 吗 ？
+  decomp: * 我 不 *
+    reasmb: 你 真的 不 (2) 吗 ？
+    reasmb: 为什么 你 不 (2) ？
+    reasmb: 你 希望 能够 (2) 吗 ？
+    reasmb: 这 让 你 困扰 吗 ？
+  decomp: * 我 觉得 *
+    reasmb: 多 告诉 我 一些 这种 感觉 。
+    reasmb: 你 经常 觉得 (2) 吗 ？
+    reasmb: 你 喜欢 觉得 (2) 吗 ？
+    reasmb: 觉得 (2) 让 你 想到 什么 ？
+  decomp: * 我 * 你 *
+    reasmb: 也许 在 你 的 幻想 中 我们 互相 (2) 。
+    reasmb: 你 希望 (2) 我 吗 ？
+    reasmb: 你 似乎 需要 (2) 我 。
+    reasmb: 你 还 (2) 别的 人 吗 ？
+  decomp: *
+    reasmb: 你 说 (1) ？
+    reasmb: 你 能 详细 说说 吗 ？
+    reasmb: 你 说 (1) 有 什么 特别 的 原因 吗 ？
+    reasmb: 这 真 有趣 。
+
+key: 是的
+  decomp: *
+    reasmb: 你 看起来 很 肯定 。
+    reasmb: 你 很 确定 。
+    reasmb: 我 明白 。
+    reasmb: 我 理解 。
+
+key: 不是
+  decomp: *
+    reasmb: 你 说 不是 只是 为了 消极 吗 ？
+    reasmb: 你 有 点 消极 。
+    reasmb: 为什么 不 呢 ？
+    reasmb: 为什么 说 “ 不是 ” ？
+
+key: 我的 2
+  decomp: $ * 我的 *
+    reasmb: 让 我们 继续 讨论 为什么 你 的 (2) 。
+    reasmb: 之前 你 说 你 的 (2) 。
+    reasmb: 但是 你 的 (2) 。
+    reasmb: 这 和 你 的 (2) 有 关系 吗 ？
+  decomp: * 我的 * @family *
+    reasmb: 多 告诉 我 一些 关于 你 家人 的 事 。
+    reasmb: 你 家里 还有 谁 (4) ？
+    reasmb: 你 的 (3) ？
+    reasmb: 想到 你 的 (3) 时 还有 什么 浮现 在 脑海 ？
+  decomp: * 我的 *
+    reasmb: 你 的 (2) ？
+    reasmb: 为什么 你 说 你 的 (2) ？
+    reasmb: 这 是否 让 你 想到 别的 属于 你 的 东西 ？
+    reasmb: 你 的 (2) 很 重要 吗 ？
+
+key: 能
+  decomp: * 你 能 *
+    reasmb: 你 相信 我 能 (2) ， 不是 吗 ？
+    reasmb: goto 什么
+    reasmb: 你 希望 我 能够 (2) 。
+    reasmb: 也许 你 自己 也 希望 能够 (2) 。
+  decomp: * 我 能 *
+    reasmb: 你 是否 能 (2) 取决于 你 自己 而 不 是 我 。
+    reasmb: 你 想 能够 (2) 吗 ？
+    reasmb: 也许 你 不 想 (2) 。
+    reasmb: goto 什么
+
+key: 什么
+  decomp: *
+    reasmb: 为什么 这么 问 ？
+    reasmb: 这个 问题 让 你 感兴趣 吗 ？
+    reasmb: 你 真正 想 知道 什么 ？
+    reasmb: 这种 问题 是否 经常 萦绕 在 你 心头 ？
+    reasmb: 什么 答案 会 最 让 你 满意 ？
+    reasmb: 你 怎么 认为 ？
+    reasmb: 问 这个 时 你 想到 什么 ？
+    reasmb: 你 以前 问过 这种 问题 吗 ？
+    reasmb: 你 问过 别人 吗 ？
+
+key: 因为
+  decomp: *
+    reasmb: 这 是 真正 的 原因 吗 ？
+    reasmb: 没有 别的 原因 浮现 在 脑海 吗 ？
+    reasmb: 这个 原因 能 解释 别的 什么 吗 ？
+    reasmb: 还 可能 有 什么 原因 ？
+
+key: 为什么
+  decomp: * 为什么 你 不 *
+    reasmb: 你 相信 我 不 (2) 吗 ？
+    reasmb: 也许 我 很快 会 (2) 。
+    reasmb: 你 应该 自己 (2) 吗 ？
+    reasmb: 你 想 让 我 (2) 吗 ？
+    reasmb: goto 什么
+  decomp: * 为什么 我 不能 *
+    reasmb: 你 认为 你 应该 能够 (2) 吗 ？
+    reasmb: 你 想 能够 (2) 吗 ？
+    reasmb: 你 相信 这 会 帮助 你 (2) 吗 ？
+    reasmb: 你 知道 为什么 你 不能 (2) 吗 ？
+    reasmb: goto 什么
+  decomp: *
+    reasmb: goto 什么
+
+key: 所有人 2
+  decomp: * @everyone *
+    reasmb: 真的 吗 ， (2) ？
+    reasmb: 肯定 不 是 (2) 。
+    reasmb: 你 能 想到 某个 具体 的 人 吗 ？
+    reasmb: 比如 谁 ？
+    reasmb: 你 在想 一个 很 特别 的 人 吗 ？
+    reasmb: 可以 问 是 谁 吗 ？
+    reasmb: 也许 是 某个 特别 的 人 ？
+    reasmb: 你 心里 有 一个 具体 的 人 ， 不是 吗 ？
+    reasmb: 你 认为 你 在 说 谁 ？
+
+key: 大家 2
+  decomp: *
+    reasmb: goto 所有人
+
+key: 没人 2
+  decomp: *
+    reasmb: goto 所有人
+
+key: 没有人 2
+  decomp: *
+    reasmb: goto 所有人
+
+key: 总是 1
+  decomp: *
+    reasmb: 你 能 想到 一个 具体 的 例子 吗 ？
+    reasmb: 什么时候 ？
+    reasmb: 你 在想 什么 事件 ？
+    reasmb: 真的 总是 吗 ？
+
+key: 曾经 2
+  decomp: * 我 曾经 *
+    reasmb: 如果 你 曾经 (2) 会 怎样 ？
+    reasmb: 你 认为 你 曾经 (2) 吗 ？
+    reasmb: 你 曾经 (2) 吗 ？
+    reasmb: 如果 你 曾经 (2) ， 那 意味着 什么 ？
+    reasmb: (2) 让 你 想到 什么 ？
+    reasmb: goto 什么
+  decomp: * 你 曾经 *
+    reasmb: 你 愿意 相信 我 曾经 (2) 吗 ？
+    reasmb: 什么 让 你 认为 我 曾经 (2) ？
+    reasmb: 你 怎么 认为 ？
+    reasmb: 也许 我 曾经 (2) 。
+    reasmb: 如果 我 曾经 (2) 会 怎样 ？
+
+key: 像 10
+  decomp: *
+    reasmb: 在 什么 方面 ？
+    reasmb: 你 看到 什么 相似 之处 ？
+    reasmb: 这种 相似 让 你 想到 什么 ？
+    reasmb: 你 还 看到 什么 联系 ？
+    reasmb: 你 认为 这种 相似 意味着 什么 ？
+    reasmb: 你 觉得 有 什么 联系 ？
+    reasmb: 会 不会 真的 有 联系 ？
+    reasmb: 怎么 ？
+
+key: 喜欢 10
+  decomp: * @be * 像 *
+    reasmb: goto 像
